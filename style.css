@@ -25,7 +25,7 @@ header{
     width:100%;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     position: absolute;
-    z-index: 100;
+    z-index: 150;
     padding: 0.9rem;
     top: 0;
     left: 0;
@@ -130,20 +130,206 @@ main{
 .bg-img{
     position: absolute;
     width:2800px;
-    top: calc(50%-390px);
+    top: calc(50% - 390px);
     left: calc(50%);
     
     transform: translate(-50%,-50%);
 
 }
 
-.fog-7{
-    position: absolute;
-    width:1800px;
-    top: calc(50%-450px);
-    left: calc(50%);
+.fog-1 {
     z-index: 2;
+    top: calc(50% - 100px);
+    left: calc(50% + 300px);
+    width: 1900px;
+    position: absolute;
     transform: translate(-50%,-50%);
+  }
+  
+  .mountain-10 {
+    z-index: 3;
+    top: calc(50% + 69px);
+    width: 870px;
+    left: calc(50% + 230px);
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .fog-2 {
+    z-index: 4;
+    top: calc(50% + 95px);
+    left: calc(50% + 7px);
+    width: 1833px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  .mountain-9 {
+    z-index: 5;
+    top: calc(50% + 119px);
+    width: 463px;
+    left: calc(50% - 457px);
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-8 {
+    z-index: 14;
+    top: calc(50% + 96px);
+    width: 786px;
+    left: calc(50% - 202px);
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .fog-3 {
+    z-index: 7;
+    top: calc(50% + 171px);
+    left: calc(50% + 29px);
+    width: 449px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-7 {
+    z-index: 8;
+    width: 515px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-6 {
+    z-index: 6;
+    top: calc(50% + 86.5px);
+    width: 383.5px;
+    left: calc(50% + 590px);
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-5 {
+    z-index: 16;
+    top: calc(50% + 269px);
+    width: 583px;
+    left: calc(50% + 130px);
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .fog-5 {
+    z-index: 13;
+    top: calc(50% + 149px);
+    left: calc(50% - 28px);
+    width: 1435px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-4 {
+    z-index:24;
+    top: calc(50% + 221px);
+    width: 717px;
+    left: calc(50% - 381.5px);
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-3 {
+    z-index: 15;
+    top: calc(50% + 133px);
+    left: calc(50% + 736px);
+    width: 419px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .fog-6 {
+    z-index: 16;
+    top: calc(50% + 177px);
+    left: calc(50% - 100px);
+    width: 1418px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-2 {
+    z-index: 17;
+    top: calc(50% + 188px);
+    left: calc(50% + 412px);
+    width: 625px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+  
+  .mountain-1 {
+    z-index: 18;
+    top: calc(50% + 91.5px);
+    left: calc(50% - 601px);
+    width: 450px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+  }
+ .text{
+    position: absolute;
+    z-index: 15;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    color:#fff;
+    pointer-events: auto;
+
+ }
+  .text h2{
+    font-weight: 100;
+    font-size: 6.5rem;
+
 
 }
+.text h1{
+    font-weight: 800;
+    font-size: 8rem;
+    line-height: 0.8;
+
+
+    }
+
+ .sun-rays{
+    position: absolute;
+    z-index: 19;
+    width: 600px;
+    top:0;
+    right:0;
+    pointer-events: none;
+ }
+
+ .black-shadow{
+    position: absolute;
+    z-index: 19;
+    width: 100%;
+    top:60%;
+    right:0;
+    pointer-events: none;
+ }
+
+ .vignette{
+    position:absolute;
+    z-index:100;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 45%,rgba(0,0,0,0.7 ));
+    pointer-events: none;
+ }
+
+ .parallax{
+    pointer-events: none;
+
+
+
+ }
+
+
+  
 
