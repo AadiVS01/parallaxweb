@@ -124,6 +124,8 @@ main{
     height:100vh;
     width:100vw;
     overflow:hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
      
 }
 
@@ -132,8 +134,8 @@ main{
     width:2800px;
     top: calc(50% - 390px);
     left: calc(50%);
+
     
-    transform: translate(-50%,-50%);
 
 }
 
@@ -143,7 +145,7 @@ main{
     left: calc(50% + 300px);
     width: 1900px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-10 {
@@ -152,7 +154,7 @@ main{
     width: 870px;
     left: calc(50% + 230px);
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .fog-2 {
@@ -161,7 +163,7 @@ main{
     left: calc(50% + 7px);
     width: 1833px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   .mountain-9 {
     z-index: 5;
@@ -169,16 +171,16 @@ main{
     width: 463px;
     left: calc(50% - 457px);
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-8 {
     z-index: 14;
-    top: calc(50% + 96px);
+    top: calc(50% + 100px);
     width: 786px;
     left: calc(50% - 202px);
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .fog-3 {
@@ -187,14 +189,16 @@ main{
     left: calc(50% + 29px);
     width: 449px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-7 {
-    z-index: 8;
+    z-index: 11;
+    top: - 1000px;
+    left: calc(50% - 70px);
     width: 515px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-6 {
@@ -203,7 +207,15 @@ main{
     width: 383.5px;
     left: calc(50% + 590px);
     position: absolute;
-    transform: translate(-50%,-50%);
+    
+  }
+  .fog-4 {
+    z-index: 11;
+    top: calc(50% + 171px);
+    left: calc(50% );
+    width: 449px;
+    position: absolute;
+    
   }
   
   .mountain-5 {
@@ -212,7 +224,7 @@ main{
     width: 583px;
     left: calc(50% + 130px);
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .fog-5 {
@@ -221,7 +233,7 @@ main{
     left: calc(50% - 28px);
     width: 1435px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-4 {
@@ -230,7 +242,7 @@ main{
     width: 717px;
     left: calc(50% - 381.5px);
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-3 {
@@ -239,7 +251,7 @@ main{
     left: calc(50% + 736px);
     width: 419px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .fog-6 {
@@ -248,7 +260,7 @@ main{
     left: calc(50% - 100px);
     width: 1418px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-2 {
@@ -257,7 +269,7 @@ main{
     left: calc(50% + 412px);
     width: 625px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
   
   .mountain-1 {
@@ -266,7 +278,7 @@ main{
     left: calc(50% - 601px);
     width: 450px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    
   }
  .text{
     position: absolute;
@@ -280,6 +292,9 @@ main{
     pointer-events: auto;
 
  }
+::selection{
+  background-color: #353;
+}
   .text h2{
     font-weight: 100;
     font-size: 6.5rem;
@@ -323,12 +338,12 @@ main{
     pointer-events: none;
  }
 
- .parallax{
-    pointer-events: none;
+ .parallax {
+  position: absolute;
+   /* base centering */
+  transition: transform 0.5s cubic-bezier(.15,.36,.29,.99); /* smooth movement */
+}
 
-
-
- }
 
 
   
