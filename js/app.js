@@ -61,3 +61,16 @@ window.dispatchEvent(new MouseEvent("mousemove", {
     clientX: window.innerWidth / 2,
     clientY: window.innerHeight / 2
   }));
+  
+window.onload = function() {
+    // Select the preloader and content elements
+    const preloader = document.getElementById('preloader');
+    const content = document.getElementById('content');
+
+    // Hide the preloader
+    preloader.style.display = 'none';
+
+    // Show the content with a fade-in effect
+    content.style.visibility = 'visible';
+    content.style.opacity = '1';
+};
