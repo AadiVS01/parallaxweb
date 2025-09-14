@@ -1,63 +1,61 @@
 const parallax_el = document.querySelectorAll(".parallax");
-const main=document.querySelector("main")
+const main = document.querySelector("main");
 
- if(window.innerWidth>=725){
-    main.style.maxHeight= `$(window.innerWidth * 0.6)px`;
- }
- else{
-    main.style.maxHeight= `$(window.innerWidth * 1.6)px`;
-
- }
-
+if (window.innerWidth >= 725) {
+  main.style.maxHeight = `${window.innerWidth * 0.6}px`;
+} else {
+  main.style.maxHeight = `${window.innerWidth * 1.6}px`;
+}
 
 window.addEventListener("mousemove", (e) => {
-    if(timeline.isActive()) return;
-    const xValue = e.clientX - window.innerWidth / 2;
-    const yValueRaw = e.clientY - window.innerHeight / 2;
+  if (timeline && timeline.isActive()) return;
 
-    const maxYOffset = 100; // limit in px
-    const yValue = Math.max(-maxYOffset, Math.min(yValueRaw, maxYOffset));
+  const xValue = e.clientX - window.innerWidth / 2;
+  const yValueRaw = e.clientY - window.innerHeight / 2;
 
-    parallax_el.forEach((el) => {
-        const speed = parseFloat(el.getAttribute("data-speed") || 0.05);
-        el.style.transform = `translate(-50%, -50%) translate(${xValue * speed}px, ${yValue * speed}px)`;
-    });
+  const maxYOffset = 100; // limit in px
+  const yValue = Math.max(-maxYOffset, Math.min(yValueRaw, maxYOffset));
+
+  parallax_el.forEach((el) => {
+    const speed = parseFloat(el.getAttribute("data-speed") || 0.05);
+    el.style.transform = `translate(-50%, -50%) translate(${xValue * speed}px, ${yValue * speed}px)`;
+  });
 });
 
-/* GSAP */
+/* GSAP animation */
+let timeline;
 
-let timeline = gsap.timeline();
+window.onload = function () {
+  timeline = gsap.timeline();
 
-    Array.from(parallax_el)
-    .filter(el=>!el.classList.contains("text"))
+  Array.from(parallax_el)
+    .filter(el => !el.classList.contains("text"))
     .forEach(el => {
-        timeline.from(el, {
-            top: `${el.offsetHeight / 2 + Number(el.dataset.distance)}px`,
-            duration: 3.5,
-            ease:"power3.out",
-        }, "1");
+      timeline.from(el, {
+        top: `${el.offsetHeight / 2 + Number(el.dataset.distance)}px`,
+        duration: 3.5,
+        ease: "power3.out",
+      }, "1");
     });
 
-    timeline
-    .from(".text h1",{
-        y:window.innerHeight - document.querySelector(".text h1").getBoundingClientRect().top +200 ,
-        duration:2,
-    },
-    "2.5")
-    .from(".text h2",{
-        y:-150,
-        opacity:0,
-        duration:1.5,
-    },
-    "3")
-    .from(".hide",{
-        opacity:0,
-        duration:1.5
+  timeline
+    .from(".text h1", {
+      y: window.innerHeight - document.querySelector(".text h1").getBoundingClientRect().top + 200,
+      duration: 2,
+    }, "2.5")
+    .from(".text h2", {
+      y: -150,
+      opacity: 0,
+      duration: 1.5,
+    }, "3")
+    .from(".hide", {
+      opacity: 0,
+      duration: 1.5
+    }, "3");
 
-    },"3")
-    
-
-window.dispatchEvent(new MouseEvent("mousemove", {
+  // fire initial parallax positioning
+  window.dispatchEvent(new MouseEvent("mousemove", {
     clientX: window.innerWidth / 2,
     clientY: window.innerHeight / 2
   }));
+};
